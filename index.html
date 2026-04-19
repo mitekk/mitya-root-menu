@@ -3,7 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mitya.dev</title>
+  <title>Mitya — Developer & Builder</title>
+  <meta name="description" content="Mitya's personal hub — software developer and builder. Explore my portfolio and Mashov, a platform I'm building." />
+  <link rel="canonical" href="https://mitya.dev/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mitya.dev/" />
+  <meta property="og:title" content="Mitya — Developer & Builder" />
+  <meta property="og:description" content="Mitya's personal hub — software developer and builder. Explore my portfolio and Mashov, a platform I'm building." />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mitya — Developer & Builder" />
+  <meta name="twitter:description" content="Mitya's personal hub — software developer and builder. Explore my portfolio and Mashov, a platform I'm building." />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mitya",
+    "url": "https://mitya.dev",
+    "description": "Personal hub of Mitya, software developer and builder.",
+    "author": {
+      "@type": "Person",
+      "name": "Mitya",
+      "url": "https://profile.mitya.dev"
+    }
+  }
+  </script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -19,6 +49,7 @@
     }
     h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.03em; }
     h1 span { color: #888; }
+    p.bio { font-size: 1rem; color: #888; max-width: 360px; text-align: center; line-height: 1.6; }
     nav { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
     a {
       display: block;
@@ -36,12 +67,13 @@
 </head>
 <body>
   <h1>mitya<span>.dev</span></h1>
+  <p class="bio">Software developer and builder. I make products and tools — check out my work below.</p>
   <nav>
-    <a href="https://profile.mitya.dev">
+    <a href="https://profile.mitya.dev" rel="noopener noreferrer">
       Portfolio
       <div class="label">profile.mitya.dev</div>
     </a>
-    <a href="https://mashov.mitya.dev">
+    <a href="https://mashov.mitya.dev" rel="noopener noreferrer">
       Mashov
       <div class="label">mashov.mitya.dev</div>
     </a>
