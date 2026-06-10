@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@source "../index.html";
+
+@theme {
+  --color-accent: #7aa2ff; /* soft blue accent — adjustable */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ── Project card template (kept as semantic classes so the app-onboarding skill
+   can copy a clean <article class="card"> block — see SKILL.md Phase 5) ─────────── */
+@layer components {
+  .projects-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-4xl mx-auto;
+  }
+  .card {
+    @apply relative bg-[#141414] border border-[#2a2a2a] rounded-xl px-6 py-5
+           transition duration-200 hover:-translate-y-1 hover:border-accent focus-within:border-accent;
+  }
+  .card-head {
+    @apply flex items-center justify-between gap-3;
+  }
+  .card-title {
+    @apply text-lg font-semibold text-[#e8e8e8] no-underline outline-none;
+  }
+  .card-desc {
+    @apply mt-2 text-sm text-[#888] leading-relaxed;
+  }
+  .card-gh {
+    @apply relative z-10 inline-flex text-[#666] transition-colors
+           hover:text-accent focus-visible:text-accent outline-none;
+  }
+  .gh-icon {
+    @apply w-[18px] h-[18px] fill-current;
+  }
+}
+
+/* Stretched link: the whole card clicks through to the live app. Pseudo-element
+   stays out of @apply. The GitHub icon (.card-gh, z-10) sits above it. */
+.card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+}
+.card-title:focus-visible::after {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Hover glow (request 2d) */
+.card:hover {
+  box-shadow:
+    0 0 0 1px var(--color-accent),
+    0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  .card:hover {
+    transform: none;
+  }
+}
